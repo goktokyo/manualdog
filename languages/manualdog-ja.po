@@ -1,0 +1,341 @@
+# Copyright (C) 2025 Goji Kawai @ Espicurio Inc
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: ManualDog 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/manualDog\n"
+"POT-Creation-Date: 2025-07-28T01:11:22+09:00\n"
+"PO-Revision-Date: 2025-08-05 17:24+0900\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+"X-Domain: manualdog\n"
+
+#. Plugin Name of the plugin
+msgid "ManualDog"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://espicurio.com/manualdog"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"A plugin to create and manage manuals that are only visible to authorized "
+"users within the WordPress admin area."
+msgstr ""
+"WordPressの管理画面内で、権限のあるユーザーにのみ表示されるマニュアルを作成・"
+"管理できるプラグインです。"
+
+#. Author of the plugin
+msgid "Goji Kawai @ Espicurio Inc"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://espicurio.com"
+msgstr ""
+
+#: includes/admin-pages.php:19 includes/post-types.php:19
+msgid "Manuals"
+msgstr "マニュアル"
+
+#: includes/admin-pages.php:20 includes/post-types.php:31
+msgid "View Manuals"
+msgstr "マニュアル閲覧"
+
+#: includes/admin-pages.php:21 includes/post-types.php:24
+msgid "All Manuals"
+msgstr "マニュアル一覧"
+
+#: includes/admin-pages.php:22 includes/post-types.php:26
+msgid "Add New"
+msgstr "新規追加"
+
+#: includes/admin-pages.php:23
+msgid "Settings"
+msgstr "マニュアル管理"
+
+#: includes/admin-pages.php:83 includes/admin-pages.php:84
+msgid "Manual Viewer"
+msgstr "マニュアルビューワー"
+
+#: includes/admin-pages.php:107
+msgid "Settings saved."
+msgstr "設定を保存しました。"
+
+#: includes/admin-pages.php:114 includes/admin-pages.php:268
+msgid "ManualDog Logo"
+msgstr "ロゴ"
+
+#: includes/admin-pages.php:119
+msgid "Menu Labels"
+msgstr "メニューラベル"
+
+#: includes/admin-pages.php:123
+msgid "Parent Menu"
+msgstr "親メニュー名"
+
+#: includes/admin-pages.php:124
+msgid "View Manuals Page"
+msgstr "マニュアル一覧ページの表示名"
+
+#: includes/admin-pages.php:125
+msgid "All Manuals Page"
+msgstr "マニュアル一覧ページ名"
+
+#: includes/admin-pages.php:126
+msgid "Add New Page"
+msgstr "マニュアル追加ページ名"
+
+#: includes/admin-pages.php:127
+msgid "Settings Page"
+msgstr "設定ページ名"
+
+#. translators: %s: Example of a menu label.
+#: includes/admin-pages.php:141
+msgid "e.g., \"%s\""
+msgstr "例:「%s」"
+
+#: includes/admin-pages.php:148
+msgid "Save Changes"
+msgstr "変更を保存"
+
+#: includes/admin-pages.php:154
+msgid "Important Notes"
+msgstr "重要な注意書き"
+
+#: includes/admin-pages.php:157
+msgid "About Media File Accessibility"
+msgstr "メディアファイルの公開範囲について"
+
+#: includes/admin-pages.php:159
+msgid ""
+"Heads up! Media files (like images and videos) used in this manual can be "
+"accessed by anyone with the direct URL."
+msgstr ""
+"お知らせ： WordPressの標準的な仕様により、このマニュアルで使用した画像やファ"
+"イルのURLは、誰でもアクセス可能な状態になります。"
+
+#: includes/admin-pages.php:160
+msgid ""
+"This free version does not restrict file access. Please handle sensitive "
+"media with care."
+msgstr ""
+"この無料版ではファイルへのアクセスを制限しません。機密性の高いメディアの取り"
+"扱いにはご注意ください。"
+
+#: includes/admin-pages.php:163
+msgid ""
+"Full media protection is a feature planned for a future premium version."
+msgstr ""
+"ファイルへのアクセスを完全に保護する機能は、将来のPro版で対応予定です。ご期待"
+"ください！"
+
+#: includes/admin-pages.php:168
+msgid "About Manual Sorting"
+msgstr "マニュアル並び替えについて"
+
+#: includes/admin-pages.php:173
+msgid ""
+"This plugin supports sorting using the standard WordPress \"Order\" feature "
+"(%s)."
+msgstr ""
+"このプラグインはWordPress標準の「並び順」(%s)機能による手動ソートに対応してい"
+"ます。"
+
+#: includes/admin-pages.php:178
+msgid ""
+"You can set the order by entering a number in the \"Page Attributes\" panel "
+"on each manual's edit screen."
+msgstr ""
+"各マニュアルの編集画面の「ページ属性」セクションで番号を入力することで順序を"
+"設定できます。"
+
+#. translators: %s: A link to the Post Types Order plugin.
+#: includes/admin-pages.php:183
+msgid "For intuitive drag-and-drop sorting, consider installing the %s plugin."
+msgstr ""
+"より直感的なドラッグ＆ドロップによる並び替えには「%s」プラグインのインストー"
+"ルを検討してください。"
+
+#: includes/admin-pages.php:198 includes/admin-pages.php:243
+msgid "You do not have sufficient permissions to access this page."
+msgstr "このページにアクセスする権限がありません。"
+
+#: includes/admin-pages.php:206
+msgid ""
+"This is a list of all registered manuals. Click a title to view its content."
+msgstr ""
+"登録されたすべてのマニュアルの一覧です。クリックすると内容を表示します。"
+
+#: includes/admin-pages.php:219
+msgid "No manuals have been created yet."
+msgstr "まだマニュアルは登録されていません。"
+
+#: includes/admin-pages.php:237
+msgid "Invalid manual ID."
+msgstr "無効なマニュアルIDです。"
+
+#: includes/admin-pages.php:249
+msgid "The specified manual was not found or is invalid."
+msgstr "指定されたマニュアルが存在しないか無効です。"
+
+#: includes/admin-pages.php:278
+msgid "Toggle sidebar"
+msgstr "サイドバーを開閉"
+
+#: includes/admin-pages.php:283 includes/post-types.php:28
+msgid "Edit Manual"
+msgstr "マニュアルを編集"
+
+#: includes/admin-pages.php:412
+msgid "Previous"
+msgstr "前へ"
+
+#: includes/admin-pages.php:420
+msgid "Next"
+msgstr "次へ"
+
+#: includes/dashboard.php:19
+msgid "Recent Manual Updates"
+msgstr "最近のマニュアル更新"
+
+#: includes/dashboard.php:50
+msgid "No update history yet."
+msgstr "更新履歴はまだありません。"
+
+#: includes/dashboard.php:55
+msgid "View all manuals"
+msgstr "すべてのマニュアルを"
+
+#: includes/enqueue.php:33 includes/notices.php:18
+msgid ""
+"Heads up! Media files (like images and videos) used in this manual can be "
+"accessed by anyone with the direct URL. Please handle with care."
+msgstr ""
+"注意：このマニュアルで使用した画像や動画は、URLを知っていれば誰でも閲覧できま"
+"す。取り扱いにはご注意ください。"
+
+#: includes/post-types.php:17
+msgctxt "Post Type General Name"
+msgid "Manuals"
+msgstr "投稿タイプ名（複数形）"
+
+#: includes/post-types.php:18
+msgctxt "Post Type Singular Name"
+msgid "Manual"
+msgstr "投稿タイプ名（単数"
+
+#: includes/post-types.php:20 includes/post-types.php:47
+msgid "Manual"
+msgstr "マニュアル"
+
+#: includes/post-types.php:21
+msgid "Manual Archives"
+msgstr "マニュアルアーカイブ"
+
+#: includes/post-types.php:22
+msgid "Manual Attributes"
+msgstr "マニュアル属性"
+
+#: includes/post-types.php:23
+msgid "Parent Manual:"
+msgstr "親マニュアル："
+
+#: includes/post-types.php:25
+msgid "Add New Manual"
+msgstr "マニュアル追加"
+
+#: includes/post-types.php:27
+msgid "New Manual"
+msgstr "新規マニュアル"
+
+#: includes/post-types.php:29
+msgid "Update Manual"
+msgstr "マニュアルを更新"
+
+#: includes/post-types.php:30
+msgid "View Manual"
+msgstr "マニュアルを表示"
+
+#: includes/post-types.php:32
+msgid "Search Manuals"
+msgstr "マニュアルを検索"
+
+#: includes/post-types.php:33
+msgid "No manuals found."
+msgstr "マニュアルが見つかりません。"
+
+#: includes/post-types.php:34
+msgid "No manuals found in Trash."
+msgstr "ゴミ箱にマニュアルは見つかりません。"
+
+#: includes/post-types.php:35
+msgid "Featured Image"
+msgstr "アイキャッチ画像"
+
+#: includes/post-types.php:36
+msgid "Set featured image"
+msgstr "アイキャッチ画像を設定"
+
+#: includes/post-types.php:37
+msgid "Remove featured image"
+msgstr "アイキャッチ画像を削除"
+
+#: includes/post-types.php:38
+msgid "Use as featured image"
+msgstr "アイキャッチ画像として使用"
+
+#: includes/post-types.php:39
+msgid "Insert into manual"
+msgstr "マニュアルに挿入"
+
+#: includes/post-types.php:40
+msgid "Uploaded to this manual"
+msgstr "このマニュアルにアップロード済み"
+
+#: includes/post-types.php:41
+msgid "Manuals list"
+msgstr "マニュアル一覧"
+
+#: includes/post-types.php:42
+msgid "Manuals list navigation"
+msgstr "マニュアル一覧ナビゲーション"
+
+#: includes/post-types.php:43
+msgid "Filter manuals list"
+msgstr "マニュアル一覧を絞り込む"
+
+#: includes/post-types.php:48
+msgid "Manuals displayed in the admin area."
+msgstr "管理画面に表示されるマニュアルです。"
+
+#~ msgid "Back to Manuals List"
+#~ msgstr "マニュアル一覧へ"
+
+#~ msgid ""
+#~ "Heads up! Media files (images, PDFs, etc.) uploaded here are publicly "
+#~ "accessible via their direct URL. This free version does not restrict file "
+#~ "access. Full media protection is planned for a future premium version."
+#~ msgstr ""
+#~ "注意：このマニュアルで使用した画像や動画は、URLを知っていれば誰でも閲覧で"
+#~ "きます。取り扱いにはご注意ください。"
+
+#~ msgid "Menu names updated successfully."
+#~ msgstr "メニュー名を更新しました。"
+
+#~ msgid "Add New Manual Page Name"
+#~ msgstr "新規マニュアル追加ページ名"
+
+#~ msgid "Post Types Order"
+#~ msgstr "投稿タイプの並び"
+
+#~ msgid "← Previous Manual"
+#~ msgstr "← 前のマニュアル"
+
+#~ msgid "Next Manual →"
+#~ msgstr "次のマニュアル →"

@@ -1,0 +1,293 @@
+# Copyright (C) 2025 Goji Kawai @ Espicurio Inc
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: ManualDog 1.0.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/manualDog\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-07-28T01:11:22+09:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.1\n"
+"X-Domain: manualdog\n"
+
+#. Plugin Name of the plugin
+msgid "ManualDog"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://espicurio.com/manualdog"
+msgstr ""
+
+#. Description of the plugin
+msgid "A plugin to create and manage manuals that are only visible to authorized users within the WordPress admin area."
+msgstr ""
+
+#. Author of the plugin
+msgid "Goji Kawai @ Espicurio Inc"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://espicurio.com"
+msgstr ""
+
+#: includes/admin-pages.php:19
+#: includes/post-types.php:19
+msgid "Manuals"
+msgstr ""
+
+#: includes/admin-pages.php:20
+#: includes/post-types.php:31
+msgid "View Manuals"
+msgstr ""
+
+#: includes/admin-pages.php:21
+#: includes/post-types.php:24
+msgid "All Manuals"
+msgstr ""
+
+#: includes/admin-pages.php:22
+#: includes/post-types.php:26
+msgid "Add New"
+msgstr ""
+
+#: includes/admin-pages.php:23
+msgid "Settings"
+msgstr ""
+
+#: includes/admin-pages.php:83
+#: includes/admin-pages.php:84
+msgid "Manual Viewer"
+msgstr ""
+
+#: includes/admin-pages.php:107
+msgid "Settings saved."
+msgstr ""
+
+#: includes/admin-pages.php:114
+#: includes/admin-pages.php:268
+msgid "ManualDog Logo"
+msgstr ""
+
+#: includes/admin-pages.php:119
+msgid "Menu Labels"
+msgstr ""
+
+#: includes/admin-pages.php:123
+msgid "Parent Menu"
+msgstr ""
+
+#: includes/admin-pages.php:124
+msgid "View Manuals Page"
+msgstr ""
+
+#: includes/admin-pages.php:125
+msgid "All Manuals Page"
+msgstr ""
+
+#: includes/admin-pages.php:126
+msgid "Add New Page"
+msgstr ""
+
+#: includes/admin-pages.php:127
+msgid "Settings Page"
+msgstr ""
+
+#. translators: %s: Example of a menu label.
+#: includes/admin-pages.php:141
+msgid "e.g., \"%s\""
+msgstr ""
+
+#: includes/admin-pages.php:148
+msgid "Save Changes"
+msgstr ""
+
+#: includes/admin-pages.php:154
+msgid "Important Notes"
+msgstr ""
+
+#: includes/admin-pages.php:157
+msgid "About Media File Accessibility"
+msgstr ""
+
+#: includes/admin-pages.php:159
+msgid "Heads up! Media files (like images and videos) used in this manual can be accessed by anyone with the direct URL."
+msgstr ""
+
+#: includes/admin-pages.php:160
+msgid "This free version does not restrict file access. Please handle sensitive media with care."
+msgstr ""
+
+#: includes/admin-pages.php:163
+msgid "Full media protection is a feature planned for a future premium version."
+msgstr ""
+
+#: includes/admin-pages.php:168
+msgid "About Manual Sorting"
+msgstr ""
+
+#: includes/admin-pages.php:173
+msgid "This plugin supports sorting using the standard WordPress \"Order\" feature (%s)."
+msgstr ""
+
+#: includes/admin-pages.php:178
+msgid "You can set the order by entering a number in the \"Page Attributes\" panel on each manual's edit screen."
+msgstr ""
+
+#. translators: %s: A link to the Post Types Order plugin.
+#: includes/admin-pages.php:183
+msgid "For intuitive drag-and-drop sorting, consider installing the %s plugin."
+msgstr ""
+
+#: includes/admin-pages.php:198
+#: includes/admin-pages.php:243
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+#: includes/admin-pages.php:206
+msgid "This is a list of all registered manuals. Click a title to view its content."
+msgstr ""
+
+#: includes/admin-pages.php:219
+msgid "No manuals have been created yet."
+msgstr ""
+
+#: includes/admin-pages.php:237
+msgid "Invalid manual ID."
+msgstr ""
+
+#: includes/admin-pages.php:249
+msgid "The specified manual was not found or is invalid."
+msgstr ""
+
+#: includes/admin-pages.php:278
+msgid "Toggle sidebar"
+msgstr ""
+
+#: includes/admin-pages.php:283
+#: includes/post-types.php:28
+msgid "Edit Manual"
+msgstr ""
+
+#: includes/admin-pages.php:412
+msgid "Previous"
+msgstr ""
+
+#: includes/admin-pages.php:420
+msgid "Next"
+msgstr ""
+
+#: includes/dashboard.php:19
+msgid "Recent Manual Updates"
+msgstr ""
+
+#: includes/dashboard.php:50
+msgid "No update history yet."
+msgstr ""
+
+#: includes/dashboard.php:55
+msgid "View all manuals"
+msgstr ""
+
+#: includes/enqueue.php:33
+#: includes/notices.php:18
+msgid "Heads up! Media files (like images and videos) used in this manual can be accessed by anyone with the direct URL. Please handle with care."
+msgstr ""
+
+#: includes/post-types.php:17
+msgctxt "Post Type General Name"
+msgid "Manuals"
+msgstr ""
+
+#: includes/post-types.php:18
+msgctxt "Post Type Singular Name"
+msgid "Manual"
+msgstr ""
+
+#: includes/post-types.php:20
+#: includes/post-types.php:47
+msgid "Manual"
+msgstr ""
+
+#: includes/post-types.php:21
+msgid "Manual Archives"
+msgstr ""
+
+#: includes/post-types.php:22
+msgid "Manual Attributes"
+msgstr ""
+
+#: includes/post-types.php:23
+msgid "Parent Manual:"
+msgstr ""
+
+#: includes/post-types.php:25
+msgid "Add New Manual"
+msgstr ""
+
+#: includes/post-types.php:27
+msgid "New Manual"
+msgstr ""
+
+#: includes/post-types.php:29
+msgid "Update Manual"
+msgstr ""
+
+#: includes/post-types.php:30
+msgid "View Manual"
+msgstr ""
+
+#: includes/post-types.php:32
+msgid "Search Manuals"
+msgstr ""
+
+#: includes/post-types.php:33
+msgid "No manuals found."
+msgstr ""
+
+#: includes/post-types.php:34
+msgid "No manuals found in Trash."
+msgstr ""
+
+#: includes/post-types.php:35
+msgid "Featured Image"
+msgstr ""
+
+#: includes/post-types.php:36
+msgid "Set featured image"
+msgstr ""
+
+#: includes/post-types.php:37
+msgid "Remove featured image"
+msgstr ""
+
+#: includes/post-types.php:38
+msgid "Use as featured image"
+msgstr ""
+
+#: includes/post-types.php:39
+msgid "Insert into manual"
+msgstr ""
+
+#: includes/post-types.php:40
+msgid "Uploaded to this manual"
+msgstr ""
+
+#: includes/post-types.php:41
+msgid "Manuals list"
+msgstr ""
+
+#: includes/post-types.php:42
+msgid "Manuals list navigation"
+msgstr ""
+
+#: includes/post-types.php:43
+msgid "Filter manuals list"
+msgstr ""
+
+#: includes/post-types.php:48
+msgid "Manuals displayed in the admin area."
+msgstr ""
