@@ -7,6 +7,8 @@ Stable tag: 1.0.1
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Requires at least: 5.2
+Tested up to: 6.8
 
 A WordPress plugin to create and manage manuals that are only visible to authorized users within the admin area.
 
