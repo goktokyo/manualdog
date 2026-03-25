@@ -12,7 +12,16 @@ ManualDog is a simple and intuitive manual management plugin designed for use wi
 *   **Gutenberg Ready:** Create rich manuals using the power of the block editor.
 *   **Modern Viewer UI:** A clean, two-column interface for an immersive reading experience.
 *   **Hierarchical Organization:** Structure your manuals with parent-child relationships.
+*   **All Manuals Page:** Table view with title, author, date, edit and trash actions.
+*   **Sort Order Page:** Drag-and-drop reordering with parent-child nesting powered by nestable2.
 *   **Lightweight & Secure:** Built with WordPress best practices.
+
+## 🆕 What's New in v1.1.0
+
+*   **All Manuals page** — View all manuals in a clean table with title, author, date, edit, and trash actions.
+*   **Sort Order page** — Drag and drop to reorder manuals. Drag right to nest (make a child), drag left to un-nest. No extra plugins needed.
+*   **Separated views** — "View Manuals" is now a read-only browsing page, while "All Manuals" handles management.
+*   **Removed** the "Post Types Order" plugin recommendation from Settings — sorting is now built-in.
 
 ## 🚀 Getting Started
 
