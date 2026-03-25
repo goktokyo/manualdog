@@ -45,5 +45,40 @@ function manualdog_enqueue_admin_assets( $hook ) {
 	if ( 'manualdog_manual_viewer' === $page ) {
 		wp_enqueue_script( 'manualdog-viewer-script', plugins_url( '../assets/js/manualdog-viewer.js', __FILE__ ), array( 'jquery' ), MANUALDOG_VERSION, true );
 	}
+	if ( 'manualdog_sort' === $page ) {
+		wp_enqueue_style( 'manualdog-admin-style', plugins_url( '../assets/css/manualdog-admin.css', __FILE__ ), array(), MANUALDOG_VERSION );
+		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script(
+			'nestable2',
+			plugins_url( '../assets/js/nestable2.min.js', __FILE__ ),
+			array( 'jquery' ),
+			'1.6.0',
+			true
+		);
+		wp_enqueue_script(
+			'manualdog-sort-script',
+			plugins_url( '../assets/js/manualdog-sort.js', __FILE__ ),
+			array( 'nestable2' ),
+			MANUALDOG_VERSION,
+			true
+		);
+		wp_localize_script(
+			'manualdog-sort-script',
+			'manualdog_sort_data',
+			array(
+				'ajax_url' => admin_url( 'admin-ajax.php' ),
+				'nonce'    => wp_create_nonce( 'manualdog_sort_nonce' ),
+				'i18n'     => array(
+					'save'   => __( 'Save Order', 'manualdog' ),
+					'saving' => __( 'Saving...', 'manualdog' ),
+					'saved'  => __( 'Saved!', 'manualdog' ),
+					'error'  => __( 'An error occurred. Please try again.', 'manualdog' ),
+				),
+			)
+		);
+	}
+	if ( 'manualdog_all_manuals' === $page ) {
+		wp_enqueue_style( 'manualdog-admin-style', plugins_url( '../assets/css/manualdog-admin.css', __FILE__ ), array(), MANUALDOG_VERSION );
+	}
 }
 add_action( 'admin_enqueue_scripts', 'manualdog_enqueue_admin_assets' );

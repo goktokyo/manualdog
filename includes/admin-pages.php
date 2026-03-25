@@ -20,6 +20,7 @@ function manualdog_get_default_menu_names() {
 		'view_page'     => __( 'View Manuals', 'manualdog' ),
 		'list_page'     => __( 'All Manuals', 'manualdog' ),
 		'add_new_page'  => __( 'Add New', 'manualdog' ),
+		'sort_page'     => __( 'Sort Order', 'manualdog' ),
 		'settings_page' => __( 'Settings', 'manualdog' ),
 	);
 }
@@ -61,7 +62,8 @@ function manualdog_add_admin_menu() {
 		$menu_names['list_page'],
 		$menu_names['list_page'],
 		'edit_posts',
-		'edit.php?post_type=manualdog_manual'
+		'manualdog_all_manuals',
+		'manualdog_render_all_manuals_page'
 	);
 	add_submenu_page(
 		'manualdog_manual_index',
@@ -69,6 +71,14 @@ function manualdog_add_admin_menu() {
 		$menu_names['add_new_page'],
 		'edit_posts',
 		'post-new.php?post_type=manualdog_manual'
+	);
+	add_submenu_page(
+		'manualdog_manual_index',
+		$menu_names['sort_page'],
+		$menu_names['sort_page'],
+		'edit_posts',
+		'manualdog_sort',
+		'manualdog_render_sort_page'
 	);
 	add_submenu_page(
 		'manualdog_manual_index',
@@ -124,6 +134,7 @@ function manualdog_render_settings_page() {
 				'view_page'     => __( 'View Manuals Page', 'manualdog' ),
 				'list_page'     => __( 'All Manuals Page', 'manualdog' ),
 				'add_new_page'  => __( 'Add New Page', 'manualdog' ),
+				'sort_page'     => __( 'Sort Order Page', 'manualdog' ),
 				'settings_page' => __( 'Settings Page', 'manualdog' ),
 			);
 			foreach ( $menu_names as $key => $value ) :
@@ -164,27 +175,6 @@ function manualdog_render_settings_page() {
 				</p>
 			</div>
 
-			<div style="margin-top: 20px; padding: 20px; background-color: #f6f7f7; border-left: 4px solid #72aee6;">
-				<h3 style="margin-top: 0;"><?php esc_html_e( 'About Manual Sorting', 'manualdog' ); ?></h3>
-                <p>
-                    <?php
-                                $sorting_text = sprintf(
-                                    /* translators: %s: The code tag for menu_order. */
-                                    __( 'This plugin supports sorting using the standard WordPress "Order" feature (%s).', 'manualdog' ),
-                                    '<code>menu_order</code>'
-                                );
-                                echo esc_html( $sorting_text );
-                                ?>
-                    <br>
-                    <?php esc_html_e( 'You can set the order by entering a number in the "Page Attributes" panel on each manual\'s edit screen.', 'manualdog' ); ?>
-                </p>
-				<p>
-					<?php
-					/* translators: %s: A link to the Post Types Order plugin. */
-					printf( esc_html__( 'For intuitive drag-and-drop sorting, consider installing the %s plugin.', 'manualdog' ), '<a href="https://wordpress.org/plugins/post-types-order/" target="_blank" rel="noopener noreferrer">Post Types Order</a>' );
-					?>
-				</p>
-			</div>
 		</div>
 
 	</div>
@@ -228,6 +218,198 @@ function manualdog_render_manual_index_page() {
 	<?php
 }
 
+
+/**
+ * Renders the All Manuals page (sort + nest + edit + delete + add new).
+ */
+function manualdog_render_all_manuals_page() {
+	if ( ! current_user_can( 'edit_posts' ) ) {
+		wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'manualdog' ) );
+	}
+
+	// 削除処理.
+	if (
+		isset( $_GET['action'] ) && 'delete' === $_GET['action'] &&
+		isset( $_GET['manual_id'] ) &&
+		isset( $_GET['_wpnonce'] )
+	) {
+		$delete_id = absint( $_GET['manual_id'] );
+		if ( wp_verify_nonce( sanitize_key( $_GET['_wpnonce'] ), 'delete_manual_' . $delete_id ) ) {
+			if ( current_user_can( 'delete_post', $delete_id ) && 'manualdog_manual' === get_post_type( $delete_id ) ) {
+				wp_trash_post( $delete_id );
+				wp_safe_redirect( admin_url( 'admin.php?page=manualdog_all_manuals&deleted=1' ) );
+				exit;
+			}
+		}
+	}
+
+	$menu_names = manualdog_get_menu_names();
+	?>
+	<div class="wrap manualdog-index-page">
+		<div class="manualdog-page-wrapper">
+			<div class="manualdog-page-header">
+				<h1><?php echo esc_html( $menu_names['list_page'] ); ?></h1>
+				<p><?php esc_html_e( 'Manage your manuals: reorder, nest, edit, or delete. Use the button below to add a new manual.', 'manualdog' ); ?></p>
+			</div>
+
+			<?php if ( isset( $_GET['deleted'] ) ) : ?>
+				<div class="notice notice-success is-dismissible">
+					<p><?php esc_html_e( 'Manual moved to Trash.', 'manualdog' ); ?></p>
+				</div>
+			<?php endif; ?>
+
+			<div style="margin-bottom: 20px; text-align: center;">
+				<a href="<?php echo esc_url( admin_url( 'post-new.php?post_type=manualdog_manual' ) ); ?>" class="button button-primary">
+					+ <?php esc_html_e( 'Add New Manual', 'manualdog' ); ?>
+				</a>
+			</div>
+
+			<?php
+			$all_manuals = get_posts(
+				array(
+					'post_type'      => 'manualdog_manual',
+					'posts_per_page' => -1,
+					'orderby'        => 'menu_order title',
+					'order'          => 'ASC',
+					'post_status'    => 'publish',
+				)
+			);
+			if ( empty( $all_manuals ) ) {
+				echo '<p style="text-align: center;">' . esc_html__( 'No manuals have been created yet.', 'manualdog' ) . '</p>';
+			} else {
+				$manual_tree = manualdog_build_manual_tree( $all_manuals );
+				?>
+				<table class="wp-list-table widefat fixed striped manualdog-manage-table" id="manualdog-sortable-root">
+					<thead>
+						<tr>
+							<th class="manualdog-col-title"><?php esc_html_e( 'Title', 'manualdog' ); ?></th>
+							<th class="manualdog-col-author" style="width:120px;"><?php esc_html_e( 'Author', 'manualdog' ); ?></th>
+							<th class="manualdog-col-date" style="width:100px;"><?php esc_html_e( 'Date', 'manualdog' ); ?></th>
+							<th class="manualdog-col-actions" style="width:120px;"><?php esc_html_e( 'Actions', 'manualdog' ); ?></th>
+						</tr>
+					</thead>
+					<tbody id="manualdog-sortable-tbody">
+						<?php manualdog_display_all_manuals_list_recursive( $manual_tree, 0 ); ?>
+					</tbody>
+				</table>
+				<?php
+			}
+			?>
+		</div>
+	</div>
+	<?php
+}
+
+/**
+ * Displays the hierarchical list for the All Manuals page in table format.
+ * Includes sort handle, title (with indent), author, date, edit link, and trash link.
+ *
+ * @param array $manuals Array of post objects.
+ * @param int   $level   Current depth level.
+ */
+function manualdog_display_all_manuals_list_recursive( array $manuals, $level = 0 ) {
+	foreach ( $manuals as $manual ) {
+		$author     = get_the_author_meta( 'display_name', $manual->post_author );
+		$date       = get_the_date( 'Y/m/d', $manual->ID );
+		$edit_url   = get_edit_post_link( $manual->ID );
+		$delete_url = wp_nonce_url(
+			admin_url( 'admin.php?page=manualdog_all_manuals&action=delete&manual_id=' . $manual->ID ),
+			'delete_manual_' . $manual->ID
+		);
+		$indent = $level * 20;
+		?>
+		<tr>
+			<td class="manualdog-col-title" style="padding-left: <?php echo esc_attr( $indent + 12 ); ?>px;">
+				<?php if ( $level > 0 ) : ?>
+					<span style="color:#ccc; margin-right:4px;">└</span>
+				<?php endif; ?>
+				<?php echo esc_html( $manual->post_title ); ?>
+			</td>
+			<td class="manualdog-col-author"><?php echo esc_html( $author ); ?></td>
+			<td class="manualdog-col-date"><?php echo esc_html( $date ); ?></td>
+			<td class="manualdog-col-actions">
+				<a href="<?php echo esc_url( $edit_url ); ?>"><?php esc_html_e( 'Edit', 'manualdog' ); ?></a>
+				&nbsp;|&nbsp;
+				<a href="<?php echo esc_url( $delete_url ); ?>"
+				   class="manualdog-delete-link"
+				   onclick="return confirm('<?php echo esc_js( __( 'Are you sure you want to move this manual to the Trash?', 'manualdog' ) ); ?>')">
+					<?php esc_html_e( 'Trash', 'manualdog' ); ?>
+				</a>
+			</td>
+		</tr>
+		<?php
+		if ( ! empty( $manual->children ) ) {
+			manualdog_display_all_manuals_list_recursive( $manual->children, $level + 1 );
+		}
+	}
+}
+
+/**
+ * Renders the Sort Order page using nestable2.
+ */
+function manualdog_render_sort_page() {
+	if ( ! current_user_can( 'edit_posts' ) ) {
+		wp_die( esc_html__( 'You do not have sufficient permissions to access this page.', 'manualdog' ) );
+	}
+
+	$menu_names  = manualdog_get_menu_names();
+	$all_manuals = get_posts(
+		array(
+			'post_type'      => 'manualdog_manual',
+			'posts_per_page' => -1,
+			'orderby'        => 'menu_order title',
+			'order'          => 'ASC',
+			'post_status'    => 'publish',
+		)
+	);
+
+	$manual_tree = manualdog_build_manual_tree( $all_manuals );
+	?>
+	<div class="wrap manualdog-index-page">
+		<div class="manualdog-page-wrapper">
+			<div class="manualdog-page-header">
+				<h1><?php echo esc_html( $menu_names['sort_page'] ); ?></h1>
+				<p><?php esc_html_e( 'Drag to reorder. Drag right to nest (make a child). Drag left to un-nest.', 'manualdog' ); ?></p>
+			</div>
+
+			<div style="margin-bottom: 16px; text-align: center;">
+				<button type="button" id="manualdog-sort-save-btn" class="button button-primary">
+					<?php esc_html_e( 'Save Order', 'manualdog' ); ?>
+				</button>
+				<span id="manualdog-sort-status" style="margin-left: 12px; color: #646970;"></span>
+			</div>
+
+			<?php if ( empty( $all_manuals ) ) : ?>
+				<p style="text-align:center;"><?php esc_html_e( 'No manuals have been created yet.', 'manualdog' ); ?></p>
+			<?php else : ?>
+				<div id="manualdog-nestable" class="dd">
+					<?php manualdog_render_nestable_list( $manual_tree ); ?>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+	<?php
+}
+
+/**
+ * Renders the nestable2 list HTML recursively.
+ *
+ * @param array $manuals Array of post objects with children.
+ */
+function manualdog_render_nestable_list( array $manuals ) {
+	echo '<ol class="dd-list">';
+	foreach ( $manuals as $manual ) {
+		echo '<li class="dd-item" data-id="' . esc_attr( $manual->ID ) . '">';
+		echo '<div class="dd-handle">';
+		echo '<span class="manualdog-nestable-title">' . esc_html( $manual->post_title ) . '</span>';
+		echo '</div>';
+		if ( ! empty( $manual->children ) ) {
+			manualdog_render_nestable_list( $manual->children );
+		}
+		echo '</li>';
+	}
+	echo '</ol>';
+}
 
 /**
  * Renders the individual manual viewer page.
@@ -285,6 +467,7 @@ function manualdog_render_manual_viewer_page() {
 				<?php endif; ?>
 			</div>
 			<div class="manualdog-main-content">
+				<?php // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- Intentionally using core 'the_content' filter. ?>
 				<?php echo wp_kses_post( apply_filters( 'the_content', $manual->post_content ) ); ?>
 			</div>
 			<div class="manualdog-main-footer">

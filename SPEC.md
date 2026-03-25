@@ -1,6 +1,6 @@
-# ManualDog - Development Specification (v1.0.1)
+# ManualDog - Development Specification (v1.1.0)
 
-**Last Updated:** 2025-07-14
+**Last Updated:** 2026-03-25
 **Author:** Goji Kawai @ Espicurio Inc.
 **AI Co-pilot:** gemi-chan
 
@@ -21,7 +21,7 @@ Traditional manual management using PDFs or external documents often leads to in
 
 ---
 
-## 2. Core Features (v1.0.1)
+## 2. Core Features (v1.1.0)
 
 ### 2.1. Custom Post Type: `manualdog_manual`
 *   **Admin-Facing Only:** Content is not displayed on the front-end (`public: false`).

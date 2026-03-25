@@ -52,5 +52,5 @@ function manualdog_render_dashboard_widget() {
 	echo '</ul>';
 	wp_reset_postdata();
 
-	echo '<p><a href="' . esc_url( admin_url( 'edit.php?post_type=manualdog_manual' ) ) . '">' . esc_html__( 'View all manuals', 'manualdog' ) . ' →</a></p>';
+	echo '<p><a href="' . esc_url( admin_url( 'admin.php?page=manualdog_manual_index' ) ) . '">' . esc_html__( 'View all manuals', 'manualdog' ) . ' →</a></p>';
 }

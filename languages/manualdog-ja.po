@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ManualDog 1.0.1\n"
+"Project-Id-Version: ManualDog 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/manualDog\n"
 "POT-Creation-Date: 2025-07-28T01:11:22+09:00\n"
 "PO-Revision-Date: 2025-08-05 17:24+0900\n"
@@ -135,32 +135,77 @@ msgstr ""
 "ファイルへのアクセスを完全に保護する機能は、将来のPro版で対応予定です。ご期待"
 "ください！"
 
-#: includes/admin-pages.php:168
-msgid "About Manual Sorting"
-msgstr "マニュアル並び替えについて"
+#: includes/admin-pages.php
+msgid "Manage your manuals: reorder, nest, edit, or delete. Use the button below to add a new manual."
+msgstr "マニュアルの並び替え・入れ子・編集・削除ができます。新しいマニュアルを追加するには下のボタンを使ってください。"
 
-#: includes/admin-pages.php:173
-msgid ""
-"This plugin supports sorting using the standard WordPress \"Order\" feature "
-"(%s)."
-msgstr ""
-"このプラグインはWordPress標準の「並び順」(%s)機能による手動ソートに対応してい"
-"ます。"
+#: includes/admin-pages.php
+msgid "Manual moved to Trash."
+msgstr "マニュアルをゴミ箱に移動しました。"
 
-#: includes/admin-pages.php:178
-msgid ""
-"You can set the order by entering a number in the \"Page Attributes\" panel "
-"on each manual's edit screen."
-msgstr ""
-"各マニュアルの編集画面の「ページ属性」セクションで番号を入力することで順序を"
-"設定できます。"
+#: includes/admin-pages.php
+msgid "Title"
+msgstr "タイトル"
 
-#. translators: %s: A link to the Post Types Order plugin.
-#: includes/admin-pages.php:183
-msgid "For intuitive drag-and-drop sorting, consider installing the %s plugin."
-msgstr ""
-"より直感的なドラッグ＆ドロップによる並び替えには「%s」プラグインのインストー"
-"ルを検討してください。"
+#: includes/admin-pages.php
+msgid "Author"
+msgstr "投稿者"
+
+#: includes/admin-pages.php
+msgid "Date"
+msgstr "日付"
+
+#: includes/admin-pages.php
+msgid "Actions"
+msgstr "操作"
+
+#: includes/admin-pages.php
+msgid "Sort Order"
+msgstr "並び順設定"
+
+#: includes/admin-pages.php
+msgid "Sort Order Page"
+msgstr "並び順設定ページ名"
+
+#: includes/admin-pages.php
+msgid "Drag to reorder. Drag right to nest (make a child). Drag left to un-nest."
+msgstr "ドラッグで並び替えできます。右にずらすと子になり、左にずらすと親階層に戻ります。"
+
+#: includes/admin-pages.php
+msgid "Saved!"
+msgstr "保存しました！"
+
+#: includes/admin-pages.php
+msgid "Reorder Manuals"
+msgstr "並び替え"
+
+#: includes/admin-pages.php
+msgid "Save Order"
+msgstr "順序を保存"
+
+#: includes/admin-pages.php
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: includes/admin-pages.php
+msgid "Saving..."
+msgstr "保存中..."
+
+#: includes/admin-pages.php
+msgid "An error occurred. Please try again."
+msgstr "エラーが発生しました。もう一度お試しください。"
+
+#: includes/admin-pages.php
+msgid "Edit"
+msgstr "編集"
+
+#: includes/admin-pages.php
+msgid "Trash"
+msgstr "ゴミ箱へ"
+
+#: includes/admin-pages.php
+msgid "Are you sure you want to move this manual to the Trash?"
+msgstr "このマニュアルをゴミ箱に移動してもよいですか？"
 
 #: includes/admin-pages.php:198 includes/admin-pages.php:243
 msgid "You do not have sufficient permissions to access this page."
@@ -313,6 +358,29 @@ msgstr "マニュアル一覧を絞り込む"
 #: includes/post-types.php:48
 msgid "Manuals displayed in the admin area."
 msgstr "管理画面に表示されるマニュアルです。"
+
+#~ msgid "About Manual Sorting"
+#~ msgstr "マニュアル並び替えについて"
+
+#~ msgid ""
+#~ "This plugin supports sorting using the standard WordPress \"Order\" "
+#~ "feature (%s)."
+#~ msgstr ""
+#~ "このプラグインはWordPress標準の「並び順」(%s)機能による手動ソートに対応し"
+#~ "ています。"
+
+#~ msgid ""
+#~ "You can set the order by entering a number in the \"Page Attributes\" "
+#~ "panel on each manual's edit screen."
+#~ msgstr ""
+#~ "各マニュアルの編集画面の「ページ属性」セクションで番号を入力することで順"
+#~ "序を設定できます。"
+
+#~ msgid ""
+#~ "For intuitive drag-and-drop sorting, consider installing the %s plugin."
+#~ msgstr ""
+#~ "より直感的なドラッグ＆ドロップによる並び替えには「%s」プラグインのインス"
+#~ "トールを検討してください。"
 
 #~ msgid "Back to Manuals List"
 #~ msgstr "マニュアル一覧へ"

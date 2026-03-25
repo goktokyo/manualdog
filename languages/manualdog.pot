@@ -2,7 +2,7 @@
 # This file is distributed under the GPL v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ManualDog 1.0.1\n"
+"Project-Id-Version: ManualDog 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/manualDog\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -125,21 +125,76 @@ msgstr ""
 msgid "Full media protection is a feature planned for a future premium version."
 msgstr ""
 
-#: includes/admin-pages.php:168
-msgid "About Manual Sorting"
+#: includes/admin-pages.php
+msgid "Manage your manuals: reorder, nest, edit, or delete. Use the button below to add a new manual."
 msgstr ""
 
-#: includes/admin-pages.php:173
-msgid "This plugin supports sorting using the standard WordPress \"Order\" feature (%s)."
+#: includes/admin-pages.php
+msgid "Manual moved to Trash."
 msgstr ""
 
-#: includes/admin-pages.php:178
-msgid "You can set the order by entering a number in the \"Page Attributes\" panel on each manual's edit screen."
+#: includes/admin-pages.php
+msgid "Title"
 msgstr ""
 
-#. translators: %s: A link to the Post Types Order plugin.
-#: includes/admin-pages.php:183
-msgid "For intuitive drag-and-drop sorting, consider installing the %s plugin."
+#: includes/admin-pages.php
+msgid "Author"
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Date"
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Actions"
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Sort Order"
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Sort Order Page"
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Drag to reorder. Drag right to nest (make a child). Drag left to un-nest."
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Saved!"
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Reorder Manuals"
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Save Order"
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Cancel"
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Saving..."
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Edit"
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Trash"
+msgstr ""
+
+#: includes/admin-pages.php
+msgid "Are you sure you want to move this manual to the Trash?"
 msgstr ""
 
 #: includes/admin-pages.php:198

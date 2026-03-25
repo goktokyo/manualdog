@@ -1,0 +1,6 @@
+.gitignore
+.git
+.claude
+.distignore
+SPEC.md
+*.instructions.md
