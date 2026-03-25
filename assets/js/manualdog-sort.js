@@ -15,6 +15,8 @@
 	// nestable2 初期化.
 	$( '#manualdog-nestable' ).nestable( {
 		maxDepth: 5,
+		collapseBtnHTML: '<button data-action="collapse" type="button" class="dd-collapse">▲</button>',
+		expandBtnHTML:   '<button data-action="expand"   type="button" class="dd-expand">▼</button>',
 		callback: function () {
 			// 変更があったら保存ボタンをハイライト.
 			saveBtn.classList.add( 'button-primary' );

@@ -323,7 +323,7 @@ function manualdog_display_all_manuals_list_recursive( array $manuals, $level = 
 				<?php if ( $level > 0 ) : ?>
 					<span style="color:#ccc; margin-right:4px;">└</span>
 				<?php endif; ?>
-				<?php echo esc_html( $manual->post_title ); ?>
+				<a href="<?php echo esc_url( $edit_url ); ?>" style="text-decoration:underline;"><?php echo esc_html( $manual->post_title ); ?></a>
 			</td>
 			<td class="manualdog-col-author"><?php echo esc_html( $author ); ?></td>
 			<td class="manualdog-col-date"><?php echo esc_html( $date ); ?></td>
