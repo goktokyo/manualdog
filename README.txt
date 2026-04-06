@@ -17,31 +17,37 @@ A WordPress plugin to create and manage manuals that are only visible to authori
 
 「マニュアル作成に、無駄なリソースをかけていませんか？」
 
-ウェブサイトの納品時、クライアントに渡す操作マニュアル。
-見積もりでは「おまけ」扱いだったはずなのに、気づけば膨大な時間と労力を消費している…そんな経験はありませんか？
+ウェブサイトの納品時、クライアントに渡す操作マニュアル。見積もりでは「おまけ」扱いだったはずなのに、気づけば膨大な時間と労力を消費している…そんな経験はありませんか？
 
 PDFで作ったマニュアルは、納品後に情報が古くなり、更新も面倒。どこに保存したか分からなくなることもしばしばです。
 
 `Manual Dog`は、そんなウェブ制作者の「隠れたコスト」を解決するために生まれました。
 
-マニュアルの作成、更新、そして閲覧。そのすべてを、クライアントが日頃から慣れ親しんだWordPressの管理画面内だけで完結させましょう。
-`Manual Dog`は、いつでも最新の情報を、必要な人のすぐそばに届けます。
+マニュアルの作成・更新・閲覧、そして**並び替えも入れ子も**、すべてWordPressの管理画面内だけで完結します。
 
-**v1.1.0 の新機能：**
+**主な機能:**
 
+* **マニュアル閲覧** — モダンな2カラムレイアウトで、クライアントが快適にマニュアルを閲覧できます。
 * **マニュアル一覧** — タイトル・投稿者・日付を一覧表示。編集・削除もここから。
-* **並び順設定** — ドラッグ＆ドロップで並び替え。右にずらすと子（入れ子）に、左にずらすと親階層に戻せます。
+* **並び替え・入れ子設定** — ドラッグ＆ドロップで並び順を変更。右にずらすと子（入れ子）に、左にずらすと親階層に戻せます。追加プラグイン不要。
+* **Gutenberg対応** — ブロックエディターでリッチなマニュアルを作成できます。
+* **メニュー名カスタマイズ** — 管理画面のメニュー名を自由に変更できます。
 
 ---
 
 **For English speakers:**
 
-ManualDog is a simple and intuitive manual management plugin designed for use within the WordPress admin area. It allows you to create, organize, and display manuals exclusively for logged-in users, making it perfect for client handoffs, internal company guides, or user documentation.
+Manual Dog is a WordPress plugin that lets you create, manage, and display internal manuals directly within the WordPress admin area — perfect for client handoffs, internal documentation, and team guides.
 
-**What's new in v1.1.0:**
+**Key Features:**
 
-* **All Manuals page** — View all manuals in a clean table with title, author, date, edit, and trash actions.
-* **Sort Order page** — Drag and drop to reorder manuals. Drag right to nest (make a child), drag left to un-nest. No extra plugins needed.
+* **Manual Viewer** — A clean, two-column reading interface for an immersive experience.
+* **All Manuals** — Table view with title, author, date, edit, and trash actions.
+* **Drag & Drop Sorting with Nesting** — Reorder manuals by dragging. Drag right to nest (make a child), drag left to un-nest. No extra plugins required.
+* **Gutenberg Ready** — Create rich content using the block editor.
+* **Menu Label Customization** — Rename all admin menu labels to fit your workflow.
+
+Manual Dog keeps your documentation alive inside the WordPress dashboard — always up-to-date, always within reach.
 
 == Installation ==
 
